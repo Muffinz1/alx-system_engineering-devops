@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ampn
+ls -amp
