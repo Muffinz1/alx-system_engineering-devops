@@ -4,3 +4,4 @@ my name is betty "this script changes the user to betty"
 Groups is a script used to print all the groups
 newowner script used to switch the owner of the file
 empty makes a new empty file
+excute script adds an excute permission to the owner
