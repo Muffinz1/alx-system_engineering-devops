@@ -9,4 +9,7 @@ multiple permissions gives multiple permissions to group
 everybody add multiple permissions
 james bond gives permissions to
 John Doe sets the permissions for the file hello
-mirror permission copies Reference  
+mirror permission copies Reference
+Directories permission change all files in the directory permissions
+directory permission makes a directory and gives it a permission
+change group change the group for file hello  
