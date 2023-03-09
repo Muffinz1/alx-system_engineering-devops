@@ -6,3 +6,4 @@ newowner script used to switch the owner of the file
 empty makes a new empty file
 excute script adds an excute permission to the owner
 multiple permissions gives multiple permissions to group
+everybody add multiple permissions
