@@ -7,4 +7,5 @@ empty makes a new empty file
 excute script adds an excute permission to the owner
 multiple permissions gives multiple permissions to group
 everybody add multiple permissions
-james bond gives permissions to 
+james bond gives permissions to
+John Doe sets the permissions for the file hello 
