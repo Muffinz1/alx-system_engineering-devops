@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# a script that prints best school 10 tims but on the 9th time it greets you
+n=1
+
+while [ $n -lt 10 ]
+do
+echo "Best School"
+if [ $n -eq 8 ]
+then echo "HI"
+fi
+n=$(( n+1 ))
+done
+
