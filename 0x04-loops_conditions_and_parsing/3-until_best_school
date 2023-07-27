@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# a script that prints BEST SCHOOl with untill method
+
+n=0
+
+until [ $n -eq 10 ]
+do    
+    echo "Best School"
+    n=$(( n + 1 ))
+done
