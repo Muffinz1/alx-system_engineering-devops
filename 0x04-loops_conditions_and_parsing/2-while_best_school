@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# a bash scripts that prints Best school using while 10 times
+
+A=1
+while [ $A -le 10 ]
+do    
+    echo "Best School"
+    A=$(( A + 1 ))
+done
+
