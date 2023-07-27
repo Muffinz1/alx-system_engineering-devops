@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # a script that prints best school 10 tims but on the 9th time it greets you
-n=2
+n=1
 
 while [ $n -le 10 ]
 do
