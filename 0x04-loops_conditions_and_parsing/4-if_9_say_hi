@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # a script that prints best school 10 tims but on the 9th time it greets you
-n=1
+n=2
 
-while [ $n -lt 10 ]
+while [ $n -le 10 ]
 do
 echo "Best School"
-if [ $n -eq 8 ]
-then echo "HI"
+if [ $n -eq 9 ]
+then echo "Hi"
 fi
 n=$(( n+1 ))
 done
