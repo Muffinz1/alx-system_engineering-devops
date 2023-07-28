@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Bash script that stops 4-to_infinity_and_beyond process "trap it now stops highlander ITS a waaaaar"
+	# no killing this time
+	# hehe with pkill this time
+
+pkill -f 7-highlander
