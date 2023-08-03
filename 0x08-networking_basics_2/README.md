@@ -18,7 +18,7 @@
 
 #
 
-* all Bash scripts should be exactly 
+* all Bash scripts should start with 
 ```bash
 #!/usr/bin/env bash
 ```
