@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# The command used in linux to display everything Tcp Udp and ports
+
+netstat -l
