@@ -16,7 +16,7 @@
 	12. TCP/UDP ports List
 	13. What is ping /ICMP
 	14. Positional parameters
-## man or help:
+##
 * ``netstat``
 * ``ping``
 
