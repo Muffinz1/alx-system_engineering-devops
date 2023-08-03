@@ -16,9 +16,9 @@
 	12. TCP/UDP ports List
 	13. What is ping /ICMP
 	14. Positional parameters
-
-	* ``netstat``
-	* ``ping``
+## man or help:
+* ``netstat``
+* ``ping``
 
 ## Scripts
 	0. OSI model
