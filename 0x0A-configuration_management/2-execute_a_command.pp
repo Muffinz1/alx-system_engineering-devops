@@ -1,6 +1,6 @@
 # kill the Famous kill me now
 
 exec{'killing-command':
-command => 'pkill killmenow',
+command  => 'pkill killmenow',
 provider => 'shell',
 }
