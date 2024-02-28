@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # Install nginx web server listening on port 80 that returns a page that contains the string Hello World!
 
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow "Nginx HTTP"
-sudo ufw allow 80
-echo "Hello World!" > /var/www/html/index.html
+echo "<h1>Hello World!</h1>" > /var/www/html/index.html
 sudo service nginx start
