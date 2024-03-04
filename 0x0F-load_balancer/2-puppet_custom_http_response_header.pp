@@ -1,4 +1,3 @@
-#!/usr/bin/env puppet
 # creating a custom HTTP header response, but with Puppet
 package { 'nginx':
 ensure => installed,
