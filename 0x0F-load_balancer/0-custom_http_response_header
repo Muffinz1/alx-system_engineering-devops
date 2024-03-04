@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Configuring an nginx server with a suitable header
+# to differentiate between the host names
+
+sudo sed -i '19 i \\tadd_header X-Served-By $HOSTNAME;' /etc/nginx/sites-available/default
+sudo service nginx restart
