@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Nginx must be running, and listening on port 80 of all the server’s active IPv4 IPs
+# according to documentaion nginx default port is 80
+# so we can reset or modify
+
+# config file place
+config = "/etc/nginx/nginx.conf"
+
+#modify the port back to listen at port 80
+sudo sed -i "s/\blisten [0-9]\+\b/listen 80/g" config
+
+# restart the service
+sudo service nginx restart
