@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# debugging but short
+# debugging but shorter and the service is "down"
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx start
 pkill -o nginx
