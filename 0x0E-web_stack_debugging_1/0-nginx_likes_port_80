@@ -4,6 +4,7 @@
 # update packages and install
 sudo apt update
 sudo apt install nginx
-
+# make sure to enable default
+sudo nginx -s enable default
 # start service
 sudo service nginx start
