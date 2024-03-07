@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # debugging but short
-sudo apt install nginx
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx start
+sudo service nginx restart
