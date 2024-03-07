@@ -2,4 +2,4 @@
 # debugging but short
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx start
-sudo service nginx stop
+pkill -o nginx
