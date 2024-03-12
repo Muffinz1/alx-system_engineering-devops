@@ -20,3 +20,12 @@ read record destination <<< $(dig "$full_domain" | grep -A1 'ANSWER SECTION:' | 
 # format of the answer required
 echo "The subdomain "$given_subdomain" is a "$record" record and points to "$destination""
 fi
+
+
+if [ "$#" -lt 2 ];then
+	for subdomain in "${sub_domains[@]}"; do
+		full_domain=("$subdomain.$domain")
+		read record destination <<< $(dig "$full_domain" | grep -A1 'ANSWER SECTION:' | awk '{print $4,$5}' | tr -dc '[:print:]')
+		echo "The subdomain "$subdomain" is a "$record" record and points to "$destination""
+	done
+fi
