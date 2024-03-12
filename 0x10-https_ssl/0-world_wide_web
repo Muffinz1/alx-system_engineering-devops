@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# a script that digs the domain and gets the answer part
+# then it will display information about subdomains
+domain="$1"
+sub_domains=("www" "lb-01" "web-01" "web-02")
+
+# case if there is 1 dns provided
+if [ "$#" -eq 2 ]; then
+given_subdomain="$2"
+full_domain=("$given_subdomain.$domain")
+
+# the command is diveded to 5 parts,
+# firstly dig the full domain
+# greps the answer part from that digging
+# awk extracts from the answer the type and the ip
+# tr -dc deletes all the non printable characters
+# after that read command adds the record and the ip.
+read record destination <<< $(dig "$full_domain" | grep -A1 'ANSWER SECTION:' | awk '{print $4,$5}' | tr -dc '[:print:]')
+
+# format of the answer required
+echo "The subdomain "$given_subdomain" is a "$record" record and points to "$destination""
+fi
