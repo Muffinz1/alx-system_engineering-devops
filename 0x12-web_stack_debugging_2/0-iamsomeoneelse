@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+# a script that returns a new user with whoami
 user=$1
 sudo -u $user whoami
