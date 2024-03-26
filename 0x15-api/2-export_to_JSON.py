@@ -21,13 +21,12 @@ def main():
         filename = emp_id + '.json'
     for item in r_task.json():
         if item.get("userId") == int(sys.argv[1]):
-            d = {'task': item.get('title'),
-                'completed': item.get('completed'),
-                'username': user_name}
-            data_queries[sys.argv[1]].append(d)
+            data = {'task': item.get('title'),
+                    'completed': item.get('completed'),
+                    'username': user_name}
+            data_queries[sys.argv[1]].append(data)
     with open(filename, 'w') as f:
         json.dump(data_queries, f)
-
 
 
 if __name__ == "__main__":
