@@ -21,7 +21,7 @@ def main():
         json_respond = id_respond.json()
         user_name = json_respond[0]['username']
         data = {'task': item.get('title'), 'completed': item.get('completed'),
-                'username': username}
+                'username': user_name}
         data_queries[str(item.get('userId'))].append(data)
 
     filename = 'todo_all_employees.json'
