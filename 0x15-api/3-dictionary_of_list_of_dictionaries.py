@@ -19,7 +19,7 @@ def main():
                  + str(item.get('userId'))
         id_respond = requests.get(id_url)
         json_respond = id_respond.json()
-        username = json_respond[0]['username']
+        user_name = json_respond[0]['username']
         data = {'task': item.get('title'), 'completed': item.get('completed'),
                 'username': username}
         data_queries[str(item.get('userId'))].append(data)
