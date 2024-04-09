@@ -9,12 +9,15 @@ import requests
 
 def number_of_subscribers(subreddit):
     """gets the number of subs"""
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {'User-Agent': 'My Custom User Agent'}
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    reddit_sub = ("https://api.reddit.com/r/{}/about".format(subreddit))
+    headers = {'User-Agent': 'My-User-Agent'}
+    r = requests.get(reddit_sub, headers=headers, allow_redirects=False)
 
-    if response.status_code == 200:
-        data = response.json()
-        return data['data']['subscribers']
+    if r.status_code != 200:
+        return (0)
+    r = r.json()
+    if 'data' in r:
+        return (r.get('data').get('subscribers'))
+
     else:
-        return 0
+        return (0)
