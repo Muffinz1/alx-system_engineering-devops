@@ -1,50 +1,53 @@
 #!/usr/bin/python3
-"""Function to count words in all top posts of a given Reddit subreddit."""
+"""
+Function to count words in all
+top posts of a given Reddit subreddit.
+"""
 import requests
 
 
-def count_words(subreddit, word_list, instances={}, after="", count=0):
+def count_words(subreddit, word_list, inst={}, after="", child=0):
     """
-    functin count words that count words in top posts
+    The function prints the counts of given words
+    which are found in top posts of a given subreddit.
     """
-    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
+    api = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     headers = {
-        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
+        "User-Agent": "My-User-Agent"
     }
     params = {
         "after": after,
-        "count": count,
+        "count": child,
         "limit": 100
     }
-    response = requests.get(url, headers=headers, params=params,
+    response = requests.get(api, headers=headers, params=params,
                             allow_redirects=False)
     try:
-        results = response.json()
+        r = response.json()
         if response.status_code == 404:
             raise Exception
     except Exception:
         print("")
         return
 
-    results = results.get("data")
-    after = results.get("after")
-    count += results.get("dist")
-    for c in results.get("children"):
-        title = c.get("data").get("title").lower().split()
+    r = r.get("data")
+    after = r.get("after")
+    child += r.get("dist")
+    for child in r.get("children"):
+        title = child.get("data").get("title").lower().split()
         for word in word_list:
             if word.lower() in title:
                 times = len([t for t in title if t == word.lower()])
-                if instances.get(word) is None:
-                    instances[word] = times
+                if inst.get(word) is None:
+                    inst[word] = times
                 else:
-                    instances[word] += times
+                    inst[word] += times
 
     if after is None:
-        if len(instances) == 0:
+        if len(inst) == 0:
             print("")
             return
-        instances = sorted(instances.items(), key=lambda kv: (-kv[1], kv[0]))
-        [print("{}: {}".format(k, v)) for k, v in instances]
+        inst = sorted(inst.items(), key=lambda kv: (-kv[1], kv[0]))
+        [print("{}: {}".format(k, v)) for k, v in inst]
     else:
-        count_words(subreddit, word_list, instances, after, count)
-    
+        count_words(subreddit, word_list, inst, after, child)
