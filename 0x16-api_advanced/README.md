@@ -3,7 +3,7 @@
 * Reddit API Documentation
 * Query String
 
-## scripts :black_nip:
+## scripts :black_nib:
 * 0-subs.py
 * top-ten.py
 * recurse.py
